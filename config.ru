@@ -1,3 +1,6 @@
+require 'rack'
+require 'rack/server'
+
 
 class HelloWorldApp
   def self.call(env)
