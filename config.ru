@@ -1,18 +1,7 @@
-# config.rb
-require 'rack'
-require 'rack/server'
-
-  class HelloWorld
-    def response
-      [200, {}, 'Hello World caca con pichi']
-    end
-  end
+app= proc do |env|
 
 
-  class HelloWorldApp
-    def self.call(env)
-      HelloWorld.new.response
-    end
-  end
+ [200, {}, "Hello World. You said: #{env['QUERY_STRING']}"]
 
-Rack::Server.start :app => HelloWorldApp
+end
+run app
