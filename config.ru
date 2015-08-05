@@ -18,9 +18,7 @@ end
 
 app= proc do |env|
 
-Hola=HelloWorldApp
-
  #[200, {}, "Hello World. You said: #{env.inspect}"]
 
 end
-run app
+run HelloWorldApp
