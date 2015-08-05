@@ -1,12 +1,18 @@
-app= proc do |env|
+# config.rb
+require 'rack'
+require 'rack/server'
 
   class HelloWorld
     def response
       [200, {}, 'Hello World']
     end
   end
-  
-  [200, {}, 'Hello World']
 
-end
-run app
+
+  class HelloWorldApp
+    def self.call(env)
+      HellowWorld.new.response
+    end
+  end
+
+Rack::Server.start :app => HelloWorldApp
