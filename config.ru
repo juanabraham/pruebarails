@@ -11,7 +11,7 @@ require 'rack/server'
 
   class HelloWorldApp
     def self.call(env)
-      HellowWorld.new.response
+      HelloWorld.new.response
     end
   end
 
